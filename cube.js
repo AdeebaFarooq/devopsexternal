@@ -13,7 +13,7 @@ http.createServer((req, res) => {
     res.writeHead(400, { 'Content-Type': 'text/plain' });
     res.end('Please provide a valid number in the query parameter "num".');
   }
-}).listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
+}).listen(3003, () => {
+  console.log('Server running on http://localhost:3003');
 });
 
