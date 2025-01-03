@@ -1,4 +1,4 @@
-public class double{
+public class doublepro{
     public static void main(String[] args) {
         // Define the number
         int num = 6;
