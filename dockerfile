@@ -5,7 +5,7 @@ FROM openjdk:11-jre-slim
 WORKDIR /usr/src/app
 
 # Copy the Java source file into the container
-COPY double.java .
+COPY ..
 
 # Compile the Java program
 RUN javac double.java
