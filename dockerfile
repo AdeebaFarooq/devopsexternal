@@ -7,4 +7,4 @@ COPY . .
 # Compile the Java program
 RUN javac Sample.java
 # Command to run the program
-CMD ["java", "Sample"]
+CMD ["java", "double"]
