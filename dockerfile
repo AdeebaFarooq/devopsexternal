@@ -1,14 +1,10 @@
-# Use the official OpenJDK image from Docker Hub
-FROM openjdk:11-jre-slim
-
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:11-jdk-slim
 # Set the working directory inside the container
-WORKDIR /usr/src/app
-
-# Copy the Java source file into the container
-COPY double.java .
-
+WORKDIR /app
+# Copy the current directory contents into the container at /app
+COPY . .
 # Compile the Java program
-RUN javac double.java
-
-# Run the Java program
-CMD ["java", "Double"]
+RUN javac Sample.java
+# Command to run the program
+CMD ["java", "Sample"]
