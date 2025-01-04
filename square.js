@@ -1,19 +1,22 @@
 const http = require('http');
 const url = require('url');
 
+// Define the port
+const PORT = 3000;
+
 http.createServer((req, res) => {
   const queryObject = url.parse(req.url, true).query;
   const num = parseFloat(queryObject.num);
-  
+
   if (!isNaN(num)) {
-    const cube = Math.pow(num, 3);
+    const square = num * num;
     res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end(`Cube of ${num} is: ${cube}`);
+    res.end(`Square of ${num} is: ${square}`);
   } else {
     res.writeHead(400, { 'Content-Type': 'text/plain' });
     res.end('Please provide a valid number in the query parameter "num".');
   }
-}).listen(3003, () => {
-  console.log('Server running on http://localhost:3003');
+}).listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
 
